@@ -41,3 +41,7 @@ button {
   display: block;
   height: auto;
 }
+
+#boxes {
+  display: flex;
+}
