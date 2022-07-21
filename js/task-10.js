@@ -48,6 +48,7 @@ function createBoxes() {
 
   for (let i = 0; i < amount; i += 1) {
     const color = getRandomHexColor();
+    const borderColor = getRandomHexColor();
     const size = 30 + i * 10;
 
     const box = document.createElement('div');
