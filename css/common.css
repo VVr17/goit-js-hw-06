@@ -22,29 +22,3 @@ button {
   padding: 8px 12px;
   cursor: pointer;
 }
-
-.gallery {
-  list-style: none;
-  display: flex;
-}
-
-.gallery li {
-    flex-basis: calc((100% - 90px) / 3);
-}
-
-.gallery li:not(:last-child) {
-  margin-right: 30px;
-}
-
-.image {
-  width: 100%;
-  display: block;
-  height: auto;
-}
-
-#boxes {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: 5px;
-}
