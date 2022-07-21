@@ -3,7 +3,6 @@
 Пользователь вводит количество элементов в input и нажимает кнопку Создать, 
 после чего рендерится коллекция. При нажатии на кнопку Очистить, коллекция элементов очищается.
 
-
 1. Создай функцию createBoxes(amount), которая принимает один параметр - число. 
 Функция создает столько <div>, сколько указано в amount и добавляет их в div#boxes.
 
@@ -25,9 +24,7 @@ const refs = {
 }
 
 
-refs.inputAmount.addEventListener('input', onAmountInput);
-// refs.inputAmount.addEventListener('blur', onAmountInput);
-refs.createBoxesBtn.addEventListener('click', createBoxes(18));
+refs.createBoxesBtn.addEventListener('click', createBoxes);
 refs.destroyBoxesBtn.addEventListener('click', destroyBoxes);
 
 
@@ -38,32 +35,23 @@ function getRandomHexColor() {
 }
 
 
-function onAmountInput(event) {
-  event.currentTarget.value
-}
+function createBoxes() {
+  const amount = refs.inputAmount.value;
 
-/**
- * 
- * @param {number} amount 
- */
+  destroyBoxes();
 
-function createBoxes(amount) {
-  return function () {
+  for (let i = 0; i < amount; i += 1) {
+    const color = getRandomHexColor();
+    const size = 30 + i * 10;
 
-    for (let i = 0; i < amount; i += 1) {
-      const color = getRandomHexColor();
-      const size = 30 + i * 10;
+    const box = document.createElement('div');
+    box.style.width = `${size}px`;
+    box.style.height = `${size}px`;
+    box.style.backgroundColor = color;
 
-      const box = document.createElement('div');
-      box.style.width = `${size}px`;
-      box.style.height = `${size}px`;
-      box.style.backgroundColor = color;
-
-      refs.boxesContainer.append(box);
-    }
+    refs.boxesContainer.append(box);
   }
 }
-
 
 function destroyBoxes() {
   refs.boxesContainer.innerHTML = '';
