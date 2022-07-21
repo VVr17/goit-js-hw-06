@@ -35,6 +35,7 @@ function onLoginBtnClick(event) {
 
   if (isEmpty) {
     alert('Все поля должны быть заполнены');
+    return;
   };
 
   console.log({

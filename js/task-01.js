@@ -17,7 +17,6 @@ const getItemsQuantity = list => {
 getItemsQuantity(categoriesEl);
 
 
-
 const getItemsDescription = list => {
 
   const items = Array.from(list.children);
