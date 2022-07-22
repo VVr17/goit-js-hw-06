@@ -16,9 +16,9 @@
 значения полей формы методом reset.
 */
 
-const form = document.querySelector('.login-form');
+const formRef = document.querySelector('.login-form');
 
-form.addEventListener('submit', onLoginBtnClick);
+formRef.addEventListener('submit', onLoginBtnClick);
 
 
 function onLoginBtnClick(event) {

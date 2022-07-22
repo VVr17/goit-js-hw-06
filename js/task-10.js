@@ -37,6 +37,7 @@ function getRandomHexColor() {
 
 function createBoxes() {
   let amount = refs.inputAmount.value;
+  let boxes = [];
 
   if (!amount || amount > Number(refs.inputAmount.max)) {
     alert(`Please, enter number from 1 to ${refs.inputAmount.max}`);
@@ -44,7 +45,10 @@ function createBoxes() {
     return;
   }
 
-  destroyBoxes();
+  if (refs.inputAmount.value) {
+    destroyBoxes();
+  }
+
 
   for (let i = 0; i < amount; i += 1) {
     const color = getRandomHexColor();
@@ -55,8 +59,10 @@ function createBoxes() {
     box.style.height = `${size}px`;
     box.style.backgroundColor = color;
 
-    refs.boxesContainer.append(box);
+    boxes.push(box);
   }
+
+  refs.boxesContainer.append(...boxes);
   refs.inputAmount.value = '';
 }
 

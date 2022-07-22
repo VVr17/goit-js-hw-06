@@ -5,7 +5,7 @@
 Для генерации случайного цвета используй функцию getRandomHexColor.
 */
 
-const changeColorBtn = document.querySelector('.change-color');
+const changeColorBtnRef = document.querySelector('.change-color');
 const colorRef = document.querySelector('.color')
 
 function getRandomHexColor() {
@@ -14,7 +14,7 @@ function getRandomHexColor() {
     .padStart(6, 0)}`;
 }
 
-changeColorBtn.addEventListener('click', onChangeColor);
+changeColorBtnRef.addEventListener('click', onChangeColor);
 
 function onChangeColor() {
   const color = getRandomHexColor();
