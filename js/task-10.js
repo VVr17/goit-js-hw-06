@@ -41,11 +41,11 @@ function createBoxes() {
 
   if (!amount || amount > Number(refs.inputAmount.max)) {
     alert(`Please, enter number from 1 to ${refs.inputAmount.max}`);
-    amount = '';
+    refs.inputAmount.value = '';
     return;
   }
 
-  if (refs.inputAmount.value) {
+  if (amount) {
     destroyBoxes();
   }
 
