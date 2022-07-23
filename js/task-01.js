@@ -21,10 +21,10 @@ const getItemsDescription = list => {
 
   const items = Array.from(list.children);
 
-  const itemsDescription = items.forEach (item => {
+  items.forEach (item => {
     console.log(`Category: ${item.firstElementChild.textContent}`);
     console.log(`Elements: ${item.lastElementChild.children.length}`);
-}) 
+  })
 }
 
 getItemsDescription(categoriesEl);

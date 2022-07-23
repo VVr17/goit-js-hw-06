@@ -31,7 +31,7 @@ function onLoginBtnClick(event) {
     }
   } = event.currentTarget;
 
-  const isEmpty = email.value.length === 0 || password.value.length === 0;
+  const isEmpty = !email.value.length || !password.value.length;
 
   if (isEmpty) {
     alert('Все поля должны быть заполнены');
